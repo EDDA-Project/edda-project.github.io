@@ -8,7 +8,8 @@ Front Page
 1. Install node.js and npm
 2. `npm install` from the edda-project.github.io directory (*please don't commit these files*)
 2. Add a markdown for your new post in *markdown/* and `git add` it.
-3. Edit *posts.jade* to add a new post.
+3. Edit *posts.jade* to add a new post. (You may need to add yourself to
+   post\_mixin.jade.)
 4. `make` to regenerate the static html
 5. `git commit -a` and `git push origin master`
 
