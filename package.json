@@ -9,7 +9,7 @@
   "dependencies": {
     "jade": "",
     "html2jade": "",
-    "marked": ""
+    "jstransformer-marked": ""
   },
   "scripts": {
     "postinstall": ""
