@@ -12,6 +12,28 @@ the meeting.</p>
 with a link to the first in the set.</p>
 <p><a href="#Efficient-Distribution-based-Feature-Search-in-Multi-field-Datasets">Direct link to the first</a></p>
 </p><a href="#FY16-&amp;-first-half-of-FY17-Progress-and-Updates"><small> 
+Link to this post</small></a><hr><br><h3>pAIC: Comparing Partitioning Metrics on Three Datasets</h3><a name="pAIC:-Comparing-Partitioning-Metrics-on-Three-Datasets" href="#pAIC:-Comparing-Partitioning-Metrics-on-Three-Datasets" class="anchor"><span class="octicon octicon-link"></span></a><small>March 13, 2017 -- <a href="https://github.com/jonwoodring">Jon Woodring</a><br></small><p><p><img src="images/2017-3-13/paic1.png" alt="pAIC">
+<img src="images/2017-3-13/paic2.png" alt="pAIC"></p>
+<p><img src="images/2017-3-13/paic3.png" alt="pAIC"></p>
+<p>Data partitioning becomes necessary when a large-scale simulation produces more
+data than can be feasibly stored.  The goal is to partition the data, typically
+so that every element belongs to one and only one partition, and store summary
+information about the partition, either a representative value plus an estimate
+of the error or a distribution.  Once the partitions are determined and the
+summary information stored, the raw data is discarded. This process can be
+performed in situ, meaning while the simulation is running. </p>
+<p>When creating the partitions there are many decisions that must be made.  For
+instance, how to determine once an adequate number of partitions have been
+created, how are the partitions created with respect to dividing the data, or
+how many variables should we consider simultaneously.  In addition, decisions
+must be made for how to summarize the information within each partition.
+Because of the combinatorial number of possible ways to partition and summarize
+the data, a method of comparing the different possibilities will help guide
+researchers into choosing a good partitioning and summarization scheme for
+their application. In this work we will present a metric (pAIC)
+that was created to balance the tradeoff between accuracy and storage cost. </p>
+<p>Chelsea Challacombe, Emily Casleton, and Jon Woodring (LANL)</p>
+</p><a href="#pAIC:-Comparing-Partitioning-Metrics-on-Three-Datasets"><small> 
 Link to this post</small></a><hr><br><h3>Multi-Resolution Climate Ensemble Parameter Analysis with Nested Parallel Coordinates Plot (NPCP)</h3><a name="Multi-Resolution-Climate-Ensemble-Parameter-Analysis-with-Nested-Parallel-Coordinates-Plot-(NPCP)" href="#Multi-Resolution-Climate-Ensemble-Parameter-Analysis-with-Nested-Parallel-Coordinates-Plot-(NPCP)" class="anchor"><span class="octicon octicon-link"></span></a><small>March 13, 2017 -- <a href="https://github.com/jonwoodring">Jon Woodring</a><br></small><p><p><img src="images/2017-3-13/npcp1.png" alt="Nested Parallel Coordinate Plot"></p>
 <p><img src="images/2017-3-13/npcp2.png" alt="Nested Parallel Coordinate Plot"></p>
 <p><strong>Problem</strong>: This work studies the input parameters (multi-resolution
