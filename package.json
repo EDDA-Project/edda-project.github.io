@@ -7,9 +7,6 @@
     "url": ""
   },
   "dependencies": {
-    "jade": "",
-    "html2jade": "",
-    "jstransformer-marked": ""
   },
   "scripts": {
     "postinstall": ""
@@ -19,7 +16,11 @@
   },
   "homepage": "",
   "main": "",
-  "devDependencies": {},
+  "devDependencies": {
+    "html2jade": "~0.8",
+    "jade": "~1.11",
+    "jstransformer-marked": "~1.0"
+  },
   "author": "",
   "license": ""
 }
