@@ -10,7 +10,7 @@ the meeting.</p>
 <a href="files/2017-3-13/quad_ascr_osu.ppt">Quad Chart</a></p>
 <p>Detailed updates are contained in the following posts,
 with a link to the first in the set.</p>
-<p><a href="#">Direct link to the first</a></p>
+<p><a href="#Efficient-Distribution-based-Feature-Search-in-Multi-field-Datasets">Direct link to the first</a></p>
 </p><a href="#FY16-&amp;-first-half-of-FY17-Progress-and-Updates"><small> 
 Link to this post</small></a><hr><br><h3>Multi-Resolution Climate Ensemble Parameter Analysis with Nested Parallel Coordinates Plot (NPCP)</h3><a name="Multi-Resolution-Climate-Ensemble-Parameter-Analysis-with-Nested-Parallel-Coordinates-Plot-(NPCP)" href="#Multi-Resolution-Climate-Ensemble-Parameter-Analysis-with-Nested-Parallel-Coordinates-Plot-(NPCP)" class="anchor"><span class="octicon octicon-link"></span></a><small>March 13, 2017 -- <a href="https://github.com/jonwoodring">Jon Woodring</a><br></small><p><p><img src="images/2017-3-13/npcp1.png" alt="Nested Parallel Coordinate Plot"></p>
 <p><img src="images/2017-3-13/npcp2.png" alt="Nested Parallel Coordinate Plot"></p>
@@ -141,6 +141,35 @@ median surface.  </li>
 </ul>
 <p><a href="files/2017-3-13/vis_variations.pptx">Link to the slide</a></p>
 </p><a href="#Visualizing-the-Variations-of-Ensemble-Isosurfaces"><small> 
+Link to this post</small></a><hr><br><h3>Efficient Distribution-based Feature Search in Multi-field Datasets</h3><a name="Efficient-Distribution-based-Feature-Search-in-Multi-field-Datasets" href="#Efficient-Distribution-based-Feature-Search-in-Multi-field-Datasets" class="anchor"><span class="octicon octicon-link"></span></a><small>March 13, 2017 -- <a href="https://github.com/jonwoodring">Jon Woodring</a><br></small><p><p><img src="images/2017-3-13/dist_feature1.png" alt="Distribution-Based Feature Search"></p>
+<p><img src="images/2017-3-13/dist_feature2.png" alt="Distribution-Based Feature Search"></p>
+<p><strong>Problem</strong>: Distribution-based (histogram-based) features has been utilized in
+many volume analysis and visualization applications. However, local histogram
+computation and matching is difficult in multi-field dataset due to the high
+computational cost. 1. It’s infeasible to scan through the entire data space
+and compute and compare local histogram in each location. 2. The number of
+histogram bins increases exponentially as the number of fields or dimensions
+increases, which requires a large amount of bin-by-bin comparison. 3. The high
+computation cost when searching for large-sized feature, which is defined by a
+large neighborhood-sized histogram.</p>
+<p><strong>Proposed Solution</strong>: We utilizing bitmap indexing to reduce the search space
+from the entire space domain to the voxels whose values fall into the
+user-defined value range and their neighborhood voxels. Then apply the local
+deposit approach to construct a local histogram in an inverse way. In the
+multi-field feature search cases, we proposed two complementary algorithms for
+accelerating local distribution searches. Both algorithms first approximate a
+search result, and then use a low-cost refinement step to generate the final
+search result. The first approach is merged-bin comparison (MBC). Instead of
+comparing individual bins iteratively, we compare multiple histogram bins
+between two histograms in one pass. Utilizing a property of distance measures,
+our approximate search result from MBC has no false negatives so that the
+refinement process only needs to remove the false positives to generate the
+final result. The second approach is called sampled-active-voxels (SAV). This
+utilizes stratified sampling to quickly generate approximate initial results,
+which are close to the final results when compared to simple random sampling.
+So the cost of refinement can thus be reduced.</p>
+<p><a href="files/2017-3-13/distribution_feature.pptx">Link to the slide</a></p>
+</p><a href="#Efficient-Distribution-based-Feature-Search-in-Multi-field-Datasets"><small> 
 Link to this post</small></a><hr><br><h3>FY15 Progress and Updates</h3><a name="FY15-Progress-and-Updates" href="#FY15-Progress-and-Updates" class="anchor"><span class="octicon octicon-link"></span></a><small>October 25, 2015 -- <a href="https://github.com/jonwoodring">Jon Woodring</a><br></small><p><p>See below for several updates on
 the FY15 progress and results of the EDDA project.</p>
 <p><a href="#Self-Adaptive-Density-Estimation-of-Particle-Data">Direct link to the first FY15 update</a></p>
