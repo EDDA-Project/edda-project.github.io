@@ -6,8 +6,7 @@
     "type": "git",
     "url": ""
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "scripts": {
     "postinstall": ""
   },
