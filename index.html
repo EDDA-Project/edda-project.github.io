@@ -2,7 +2,53 @@
 Argonne National Laboratory<br>Jon Woodring (LANL), Han-Wei Shen (OSU), Tom Peterka (ANL)</h3><h5><a href="#Introduction">Previous project (2015-2017) </a><i>DOE Program Manager: Dr. Lucile Nowell</i><br>The Ohio State University, Argonne National Laboratory,
 Los Alamos National Laboratory<br>Han-Wei Shen (OSU), Tom Peterka (ANL), Jon Woodring (LANL)<br>Gagan Agrawal (OSU), Huamin Wang (OSU), Joanne Wendelberger (LANL)</h5><h4><a href="http://science.energy.gov/ascr/">DOE SC ASCR </a>projects on the 
 research for using distributions
-as a proxy for large-scale data analysis.</h4><small>LA-UR-15-20108</small><hr><p><h3>Four</h3><a name="Four" href="#Four" class="anchor"><span class="octicon octicon-link"></span></a><small>August 10, 2018 -- <a href="https://github.com/jonwoodring">Jon Woodring</a><br></small><p></p><a href="#Four"><small> 
+as a proxy for large-scale data analysis.</h4><small>LA-UR-15-20108</small><hr><p><h3>Dynamic Load Balancing for Parallel Particle Tracing</h3><a name="Dynamic-Load-Balancing-for-Parallel-Particle-Tracing" href="#Dynamic-Load-Balancing-for-Parallel-Particle-Tracing" class="anchor"><span class="octicon octicon-link"></span></a><small>August 10, 2018 -- <a href="https://github.com/jonwoodring">Jon Woodring</a><br></small><p><p><img src="images/2018-08-10/Picture17.png" alt="Dynamic Particle Redistribution"></p>
+<p>In flow visualization and analysis, particle tracing is a fundamental technique
+for visualizing and analyzing flow fields. By tracing particles in the data
+domain, users can conduct many applications, for example, generating
+streamlines or pathlines, tracking particles from source to destination regions
+for source-destination queries, or computing FTLE fields to characterize the
+boundary of flow fields. In particle tracing, we always need to handle large
+data and the computational costs are expensive, so scalable and parallel
+solutions are needed.</p>
+<p>However, it is likely that the workload is imbalanced.  We proposed two
+solutions to address these problems. The first one is a dynamic load-balancing
+method based on data repartitioning for parallel particle tracing, as shown in
+top-half of the Figure. During run time, we periodically perform data
+repartitioning to balance the workload of each process based on the estimation
+of the block workload.</p>
+<p>We studied this data-repartitioning method with different data sets on Vesta, a
+Blue Gene/Q supercomputer at Argonne National Laboratory. Compared with other
+load-balancing algorithms, our method does not need any preprocessing on the
+raw data and does not require any dedicated process for work scheduling, while
+it has the capability to balance uneven workload efficiently. The performance
+study shows improved load balance and high efficiency of this method on tracing
+particles in both steady and unsteady flow.</p>
+<p>However, the this method still requires data block movement during run time,
+which makes it difficult to scale up. This observation prompted us to design a
+load-balancing algorithm from the perspective of particle distribution.
+Therefore, we proposed the second method, a dynamically load-balanced algorithm
+using k-d (short for k-dimensional) trees, which uses k-d tree decomposition to
+periodically evenly redistribute particles across processes for load balancing.
+Our final solution is a novel redesign of k-d tree decomposition, namely, the
+constrained k-d tree, to redistribute particles in the data-parallel particle
+tracing, as shown in bottom-half of the Figure.</p>
+<p>This constrained k-d tree method has also been evaluated with various flow
+visualization and analysis tasks on Vesta. With up to 8K parallel processes, we
+demonstrated that compared with the baseline data-parallel particle tracing
+method, our constrained k-d tree approach significantly improves the
+performance in both load balancing and scalability.</p>
+<p><strong>[1]</strong> Jiang Zhang, Hanqi Guo, Xiaoru Yuan, and Tom Peterka.
+<em>Dynamic Data Repartitioning for Load-Balanced Parallel Particle Tracing.</em>
+In Proceedings of IEEE Pacific Visualization Symposium (PacificVis &#39;18),
+pages 86-95, Kobe, Japan, April 10-13, 2018.</p>
+<p><strong>[2]</strong> Jiang Zhang, Hanqi Guo, Fan Hong, Xiaoru Yuan, and Tom Peterka.
+<em>Dynamic Load Balancing Based on Constrained K-D Tree Decomposition for
+Parallel Particle Tracing.</em>
+IEEE Transactions on Visualization and Computer Graphics (VIS &#39;17),
+24(1):954-963, 2018.</p>
+<p><a href="files/2018-08-10/dynamic_load_balancing.docx">Link to summary Word doc</a></p>
+</p><a href="#Dynamic-Load-Balancing-for-Parallel-Particle-Tracing"><small> 
 Link to this post</small></a><hr><br><h3>Statistical-based Super-resolution for Cosmological Emulator</h3><a name="Statistical-based-Super-resolution-for-Cosmological-Emulator" href="#Statistical-based-Super-resolution-for-Cosmological-Emulator" class="anchor"><span class="octicon octicon-link"></span></a><small>August 10, 2018 -- <a href="https://github.com/jonwoodring">Jon Woodring</a><br></small><p><p><em>Preliminary Results</em></p>
 <p>In investigating other methods to improve the quality and size reduction of
 <a href="#Emulator-of-Cosmological-Simulation-for-Initial-Parameters-Study">Gaussian Mixture Modeling (GMM)</a>
