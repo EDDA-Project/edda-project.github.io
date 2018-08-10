@@ -6,12 +6,46 @@ as a proxy for large-scale data analysis.</h4><small>LA-UR-15-20108</small><hr><
 Link to this post</small></a><hr><br><h3>Statistical-based Super-resolution for Cosmological Emulator</h3><a name="Statistical-based-Super-resolution-for-Cosmological-Emulator" href="#Statistical-based-Super-resolution-for-Cosmological-Emulator" class="anchor"><span class="octicon octicon-link"></span></a><small>August 10, 2018 -- <a href="https://github.com/jonwoodring">Jon Woodring</a><br></small><p><p><em>Preliminary Results</em></p>
 <p><a href="#Emulator-of-Cosmological-Simulation-for-Initial-Parameters-Study">Gaussian Mixture Modeling (GMM)</a></p>
 <p><em>Ko-Chih Wang and Jon Woodring</em></p>
-<p><a href="files/2018-08-10/OneSlideSR.pptx">Link to slides</a></p>
+<p><a href="files/2018-08-10/OneSlideSR.pptx">Link to poster with original resolution images</a></p>
 </p><a href="#Statistical-based-Super-resolution-for-Cosmological-Emulator"><small> 
 Link to this post</small></a><hr><br><h3>Incremental Training of Cosmological Emulator</h3><a name="Incremental-Training-of-Cosmological-Emulator" href="#Incremental-Training-of-Cosmological-Emulator" class="anchor"><span class="octicon octicon-link"></span></a><small>August 10, 2018 -- <a href="https://github.com/jonwoodring">Jon Woodring</a><br></small><p><p><em>Preliminary Results</em></p>
-<p><a href="#Emulator-of-Cosmological-Simulation-for-Initial-Parameters-Study">Gaussian Mixture Modeling (GMM)</a></p>
+<p><a href="#Emulator-of-Cosmological-Simulation-for-Initial-Parameters-Study">Gaussian Mixture Modeling (GMM)</a>
+of large-scale cosmological data sets can take a long time, due to that typical
+GMM methods will attempt to train the data in one go. This requires saving all
+of the intermediate data from simulations, and then constructing (training) the
+GMM model. This is inefficient, especially for petascale and exascale
+supercomputers, as the GMM modeling requires massive amounts of memory and
+storage. To reduce the I/O burden of constructing the GMM model in the first
+place, we are investigating building the GMM model through <em>incremental
+training.</em></p>
+<p>Incremental GMM training builds the data model by sampling an existing GMM
+model, adding new data, and then retraining on that data set. An example workflow
+would be:</p>
+<ol>
+<li>Run <a href="https://github.com/AMReX-Astro/Nyx">Nyx</a> for several input parameters</li>
+<li>Train a GMM model on Nyx&#39;s output data</li>
+<li>Run Nyx for several more input parameters</li>
+<li>Sample the GMM model and add the new data from step (3)</li>
+<li>Train a new GMM model on the data from step (4)</li>
+<li>Go to step (3)</li>
+</ol>
+<p>This amortizes the cost of building a statistical GMM model for simulations,
+by spreading the I/O cost and GMM building cost through incremental steps. In our
+initial studies, we achieve approximately 0.64% RSME error on reconstruction
+when allowing the number of Gaussian parameters to grow. If we keep the number
+of Gaussians to a fixed number, such as 5 Gaussians, the errors are larger,
+but within a tolerable range of 1% RSME.</p>
+<p>In future work, we will investigate the application of <em>in situ</em> GMM training,
+as our incremental method would allow for the integration of GMM methods
+directly into simulations. This would bypass the need for post-processing GMM
+training, reducing the storage needs, and building the GMM model as the
+simulation runs, allowing for faster scientific analysis turn-around times.</p>
+<h4 id="incremental-gmm-reconstruction-x-axis-incremental-simulation-run-y-axis-rmse-">Incremental GMM reconstruction (x-axis incremental simulation run, y-axis RMSE)</h4>
+<p><img src="images/2018-08-10/Picture11.png" alt="Incremental training">
+<img src="images/2018-08-10/Picture12.png" alt="Incremental training">
+<img src="images/2018-08-10/Picture13.png" alt="Incremental training"></p>
 <p><em>Jiayi Xu and Jon Woodring</em></p>
-<p><a href="files/2018-08-10/OneSlideSR.pptx">Link to slides</a></p>
+<p><a href="files/2018-08-10/OneSlideSR.pptx">Link to poster with original resolution images</a></p>
 </p><a href="#Incremental-Training-of-Cosmological-Emulator"><small> 
 Link to this post</small></a><hr><br><h3>Emulator of Cosmological Simulation for Initial Parameters Study</h3><a name="Emulator-of-Cosmological-Simulation-for-Initial-Parameters-Study" href="#Emulator-of-Cosmological-Simulation-for-Initial-Parameters-Study" class="anchor"><span class="octicon octicon-link"></span></a><small>August 10, 2018 -- <a href="https://github.com/jonwoodring">Jon Woodring</a><br></small><p><p><em>Preliminary Results</em></p>
 <p><a href="https://github.com/AMReX-Astro/Nyx">Nyx</a>, a DOE cosmological model,
@@ -51,7 +85,7 @@ regime, which is acceptable for statistical studies of cosmological data.</p>
 <p><img src="images/2018-08-10/Picture9.png" alt="Original image z-Momentum">
 <img src="images/2018-08-10/Picture10.png" alt="Reconstructed image z-Momentum"></p>
 <p><em>Jiayi Xu, Ko-Chih Wang, and Jon Woodring</em></p>
-<p><a href="files/2018-08-10/OneSlideSR.pptx">Link to slides</a></p>
+<p><a href="files/2018-08-10/OneSlideSR.pptx">Link to poster with original resolution images</a></p>
 </p><a href="#Emulator-of-Cosmological-Simulation-for-Initial-Parameters-Study"><small> 
 Link to this post</small></a><hr><br><h3>Information Guided Data Sampling and Recovery using Bitmap Indexing</h3><a name="Information-Guided-Data-Sampling-and-Recovery-using-Bitmap-Indexing" href="#Information-Guided-Data-Sampling-and-Recovery-using-Bitmap-Indexing" class="anchor"><span class="octicon octicon-link"></span></a><small>April 5, 2018 -- <a href="https://github.com/jonwoodring">Jon Woodring</a><br></small><p><p><img src="images/2018-4-5/wei_1.png" alt="Sampling and Recovery with Bitmap Indexing"></p>
 <p>Creating a data representation is a common approach for efficient and effective
