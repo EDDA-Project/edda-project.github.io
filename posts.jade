@@ -1,6 +1,20 @@
 include post_mixin.jade
 
 +post(
+"Two",
+"August 13, 2018",
+"JLW")
+  p
+    include:marked markdown/2018-08-13_2.md
+
++post(
+"One",
+"August 13, 2018",
+"JLW")
+  p
+    include:marked markdown/2018-08-13_1.md
+
++post(
 "Dynamic Load Balancing for Parallel Particle Tracing",
 "August 10, 2018",
 "JLW")
