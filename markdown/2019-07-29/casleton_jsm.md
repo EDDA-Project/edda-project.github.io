@@ -1,3 +1,7 @@
+![Metrics for data partitioning](images/2019-07-29/jsm_1.png)
+![Metrics for data partitioning](images/2019-07-29/jsm_2.png)
+![Metrics for data partitioning](images/2019-07-29/jsm_3.png)
+
 The continual growth in size and complexity of computer simulations poses
 challenges to data storage and post-processing. One solution is to partition
 the simulation output, storing only a fraction of the data generated.
