@@ -21,5 +21,7 @@ Thus, we continue to explore the possibility for machine learning models
 integrating new machine learning methods with existing methods in signal
 processing and compression.
 
+*Jingyi Shen, Robert Gross, Jonathan Woodring*
+
 [Link to summer presentation
 slides](files/2019-07-29/summer_work_gross_shen.pptx)
