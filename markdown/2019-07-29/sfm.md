@@ -25,6 +25,6 @@ CPU/GPU coprocessing. We show the scalability on two supercomputers, Mira (up
 to 256K Blue Gene/Q cores) and Titan (up to 128K Opteron cores and 8K GPUs),
 that can trace billions of particles in seconds.
 
-*Hanqi Guo; Wenbin He; Sangmin Seo; Han-Wei Shen; Tom Peterka*
+*Hanqi Guo, Wenbin He, Sangmin Seo, Han-Wei Shen, Tom Peterka*
 
 [Link to paper in OSTI](https://www.osti.gov/biblio/1366303)
